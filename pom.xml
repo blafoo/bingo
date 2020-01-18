@@ -98,7 +98,7 @@
     </dependencies>
 
     <build>
-        <defaultGoal>clean package -Pproduction</defaultGoal>
+        <defaultGoal>package</defaultGoal>
         <plugins>
             <!-- We use jetty plugin, replace it with your favourite developing servlet container -->
             <plugin>
@@ -138,7 +138,7 @@
                 <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
             <activation>
-            	<activeByDefault>false</activeByDefault>
+            	<activeByDefault>true</activeByDefault>
            	</activation>
 
             <dependencies>
