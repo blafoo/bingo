@@ -137,6 +137,9 @@
             <properties>
                 <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
+            <activation>
+            	<activeByDefault>true</activeByDefault>
+           	</activation>
 
             <dependencies>
                 <dependency>
