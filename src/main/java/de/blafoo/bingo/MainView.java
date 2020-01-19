@@ -24,15 +24,14 @@ import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.shared.Registration;
 
-/**
- * The main view contains a button and a click listener.
- */
 @Route
+@Push
 @PWA(name = "bingo-ct", shortName = "bingo-ct")
 public class MainView extends VerticalLayout implements ComponentEventListener<ClickEvent<Button>> {
 	
@@ -207,17 +206,14 @@ public class MainView extends VerticalLayout implements ComponentEventListener<C
 		bingo.add(h1, image, player);
 		bingo.open();
 		
-		Broadcaster.broadcast("BINGO#"+name);
+		Broadcaster.broadcast(name);
 	}
 	
 	@Override
 	protected void onAttach(AttachEvent attachEvent) {
 		UI ui = attachEvent.getUI();
 		broadcasterRegistration = Broadcaster.register(newMessage -> {
-			String cmp = "BINGO#"+name;
-			if ( cmp.compareTo(newMessage) == 0 ) {
-				ui.access(() -> showNotification("BINGO! '"+name+"' hat gewonnen!", NotificationVariant.LUMO_SUCCESS));
-			}
+			ui.access(() -> showNotification("BINGO! '"+name+"' hat gewonnen!", NotificationVariant.LUMO_SUCCESS));
 		});
 	}
 
