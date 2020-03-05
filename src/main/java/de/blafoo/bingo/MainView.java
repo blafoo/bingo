@@ -17,8 +17,6 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H6;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -78,7 +76,7 @@ public class MainView extends VerticalLayout implements ComponentEventListener<C
 		Collections.shuffle(data); 
 		
 		HorizontalLayout layout = new HorizontalLayout();
-		matrix = new ArrayList<BitSet>();
+		matrix = new ArrayList<>();
 		
 		for ( int row = 0; row < numberOfRows; row++) {
 			matrix.add(new BitSet(numberOfCols));
@@ -127,13 +125,8 @@ public class MainView extends VerticalLayout implements ComponentEventListener<C
 	public void onComponentEvent(ClickEvent<Button> event) {
 		BingoButton button = (BingoButton) event.getSource();
 		if ( button.isChecked()) {
-			button.setIcon(new Icon(VaadinIcon.THUMBS_UP));
-			
 			matrix.get(button.getRow()).set(button.getCol());
-
 		} else {
-			button.setIcon(null);
-			
 			matrix.get(button.getRow()).clear(button.getCol());
 		}
 

@@ -4,6 +4,8 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 
 /**
  * Erweiterung des normalen Buttons zur Darstellung verschiedener Zustände
@@ -44,8 +46,10 @@ public class BingoButton extends Button {
 	public void setChecked(Boolean checked) {
 		this.checked = checked;
 		if ( isChecked()) {
+			setIcon(new Icon(VaadinIcon.THUMBS_UP));
 			addThemeVariants(ButtonVariant.LUMO_PRIMARY); // Button wird blau
 		} else {
+			setIcon(null);
 			removeThemeVariants(ButtonVariant.LUMO_PRIMARY); // Button erhält wieder die normale Farbe
 		}
 	}
