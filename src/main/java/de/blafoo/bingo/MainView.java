@@ -72,7 +72,7 @@ public class MainView extends VerticalLayout implements ComponentEventListener<C
      */
     private void createBingoGrid(VerticalLayout parent) {
 
-		List<String> data = BingoModel.getData("Städte");
+		List<String> data = BingoModel.getData("Besprechungen");
 		Collections.shuffle(data); 
 		
 		HorizontalLayout layout = new HorizontalLayout();
@@ -110,7 +110,7 @@ public class MainView extends VerticalLayout implements ComponentEventListener<C
 			BingoButton button = new BingoButton(col, row, content, this);
 			// per Default haben Buttons nur die minimal notwendige Größe
 			button.setHeight("75px");
-			button.setWidth("150px");
+			button.setWidth("175px");
 			layout.add(button);
 			row++;
 		}

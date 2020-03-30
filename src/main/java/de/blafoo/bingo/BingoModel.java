@@ -17,6 +17,13 @@ public class BingoModel {
 				"Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund",
 				"Essen", "Leipzig", "Bremen", "Dresden", 
 				"Hannover", "Nürnberg", "Duisburg", "Bochum"));
+		
+		// https://www.besprechungsbingo.de/
+		DATA.put("Besprechungen", Arrays.asList(
+				"Synergie", "Sich schlau machen", "Wertschöpfung", "Ball zuspielen", 
+				"Global Player", "Kommunizieren", "Kunden orientiert", "Target",
+				"Problematik", "Proaktiv", "Visionen", "Fokussieren", 
+				"Zielführend", "Bilateral", "Hut aufhaben", "Wertschätzend"));
 	}
 	
 	public static List<String> getData(String key) {
