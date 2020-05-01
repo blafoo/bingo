@@ -50,7 +50,7 @@ public class MainView extends VerticalLayout implements ComponentEventListener<C
 
     public MainView() {
     	add(new H2("Bingo"));
-		add(new Label("Langeweile bei Besprechungen im täglichen Büroalltag oder zu viel Bullshit? Mit diesem Spiel geht das vorbei. Einfach beim Bingo spielen aufmerksam zuhören. Fällt eines der auf dem Spielfeld gelisteten Worte, kann dieses markiert werden. Eine komplette Reihe horizontal, vertikal oder diagonal? Bingo!"));
+		add(new Label("Langeweile bei Besprechungen im täglichen Büroalltag oder zu viel Bullshit? Mit diesem Spiel geht das vorbei. Einfach beim Bingo-Spielen aufmerksam zuhören. Fällt eines der auf dem Spielfeld gelisteten Worte, kann dieses markiert werden. Eine komplette Reihe horizontal, vertikal oder diagonal? Bingo!"));
 		add(new H6(""));
 		
         // Name des Spielers
@@ -206,7 +206,7 @@ public class MainView extends VerticalLayout implements ComponentEventListener<C
 	protected void onAttach(AttachEvent attachEvent) {
 		UI ui = attachEvent.getUI();
 		broadcasterRegistration = Broadcaster.register(newMessage -> {
-			ui.access(() -> showNotification("BINGO! '"+name+"' hat gewonnen!", NotificationVariant.LUMO_SUCCESS));
+			ui.access(() -> showNotification("BINGO! '" + newMessage + "' hat gewonnen!", NotificationVariant.LUMO_SUCCESS));
 		});
 	}
 
