@@ -23,7 +23,7 @@ public class BingoModel {
 				"Synergie", "Sich schlau machen", "Wertschöpfung", "Ball zuspielen", 
 				"Global Player", "Kommunizieren", "Kunden orientiert", "Target",
 				"Problematik", "Proaktiv", "Visionen", "Fokussieren", 
-				"Zielführend", "Bilateral", "Hut aufhaben", "Wertschätzend"));
+				"Zielführend", "Bilateral", "Hut aufhaben", "Wertschätzend", "Ich bin blockiert!"));
 	}
 	
 	public static List<String> getData(String key) {
